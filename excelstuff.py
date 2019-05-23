@@ -22,7 +22,7 @@ print(lastActiveSheet)
 targetSheetString = sheetNamesArray2[0]
 print(targetSheetString) # No need for .title, it returns the name only, not a sheet object, this is string
 
-s = wb.get_sheet_by_name(sheetNamesArray2[0])
+s = wb.get_sheet_by_name(sheetNamesArray2[0]) # is sheet object
 
 # Get a cell value
 
