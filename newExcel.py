@@ -15,7 +15,7 @@ wb.create_sheet()
 # create sheet with arguments
 wb.create_sheet(index=3, title="index 3")
 
-# Write something
+# Write something in the cells
 sheet = wb.get_sheet_by_name('Spam Bacon Eggs')
 sheet['A1'] = "some thing"
 sheet['A2'] = 32
