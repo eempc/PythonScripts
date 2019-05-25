@@ -9,11 +9,16 @@ sheet = wb.active
 
 sheet.title = "Spam Bacon Eggs"
 
+# Create default name sheet in last index
+wb.create_sheet()
 
+# create sheet with arguments
+wb.create_sheet(index=3, title="index 3")
 
-
-
-
+# Write something
+sheet = wb.get_sheet_by_name('Spam Bacon Eggs')
+sheet['A1'] = "some thing"
+sheet['A2'] = 32
 
 # Saving
 file_name = str(datetime.datetime.now().strftime('%Y-%m-%d %H%M%S')) + "-CreationTest.xlsx"
