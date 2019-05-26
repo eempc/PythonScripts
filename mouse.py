@@ -11,7 +11,7 @@ width, height = pyautogui.size()
 
 print(width, height)
 
-# Move absolute coordinates
+# Move absolute coordinates, can also use None as an argument to keep the x or the y
 def move_absolute():
     for i in range(3):
         pyautogui.moveTo(100, 100, duration=0.2)
@@ -39,4 +39,4 @@ print(pyautogui.position())
 time.sleep(1)
 
 #pyautogui.dragRel(50,25,duration=0.3)
-pyautogui.scroll(200)
+#pyautogui.scroll(200) scroll 200 up
