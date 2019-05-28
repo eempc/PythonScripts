@@ -24,8 +24,6 @@ def do_something_every_seconds():
         print("Thread 0:", i)
         time.sleep(0.25)
 
-
-
 thread_0 = threading.Thread(target=do_something_every_seconds)
 thread_0.start()
 
