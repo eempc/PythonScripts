@@ -1,12 +1,12 @@
-import webbrowser
 import requests
 import codecs
 import threading
 import datetime
+import os
 
-# Multi-threaded mass html download
+# Multi-threaded mass html text download (no images)
 
-test_mode = True
+test_mode = False
 
 # Make sublist 0
 url_sublist_0 = []
@@ -28,27 +28,26 @@ def download_url_master_list_multithread(url_list_of_lists):
 
 def download_url_list(url_list):
     for each_url in url_list:
-        print("Attempt download " + each_url)
+        # Get a name for the file
+        file_name = str(datetime.datetime.now().strftime('%Y-%m-%d %H%M%S')) + " " + each_url[8:].replace("/", "-") + ".html"
+        relative_path = os.path.join("Webscrape", file_name)
+
+        print("Attempt download " + each_url + " to " + relative_path)
         if not test_mode:
             response = requests.get(each_url)
             if (response.status_code == 200):
-                file_name = str(datetime.datetime.now().strftime('%Y-%m-%d %H%M%S')) + each_url[8:].replace("/", "-")
-                file = codecs.open(file_name + ".html", "w", encoding="utf8")
+                # Open the new file ready to be written with encoding to utf8
+                file = codecs.open(relative_path, "w", encoding="utf8")
                 file.write(response.text)
+
+                # Split the file up in case it is huge (non-utf, non-codecs)
+                #file = open(file_name, "w")
+                #for chunk in response.iter_content(100000):
+                    #file.write(chunk)
+
                 file.close()
                 print("Response okay", response.text[:100])
             else:
                 print("Response error", each_url)
 
 download_url_master_list_multithread(url_list_master)
-
-
-#webbrowser.open()
-
-#response = requests.get(url)
-#print(type(response))
-#print(len(response.text))
-
-#file = open("test.html", "w")
-#file.write(response.text)
-#file.close()
