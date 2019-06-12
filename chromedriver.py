@@ -19,7 +19,7 @@ search_box = driver.find_element_by_name('q')
 search_box.send_keys(search_string)
 #search_box.submit() # Standard search
 
-time.sleep(1)
+time.sleep(1) # 1 second wait for the results to pop up
 
 lucky_button = driver.find_element_by_name('btnI')
 lucky_button.click()
