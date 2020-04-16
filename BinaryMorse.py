@@ -1,6 +1,7 @@
 import string
 
 
+
 file = open("BinaryMorse.txt", "w")
 
 for c in string.ascii_lowercase:
