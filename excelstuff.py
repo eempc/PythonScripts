@@ -1,4 +1,3 @@
-##Install pip install openpyxl==2.3.3
 import openpyxl
 from openpyxl.cell import get_column_letter, column_index_from_string
 
@@ -60,9 +59,9 @@ print(column_index_from_string('C'))  # Expect 3
 
 # Iterate through all used cells row by row, swap max_row and max_column to go through vertically
 print("---iterate through all row by row---")
-for i in range(1,current_worksheet.max_row,1):
+for i in range(1, current_worksheet.max_row, 1):
     print("--Row", i,"--")
-    for j in range(1,current_worksheet.max_column,1):
+    for j in range(1, current_worksheet.max_column, 1):
         cell = current_worksheet.cell(row=i, column=j)
         print(cell.coordinate, cell.value)
         if (cell.value == "bold"):

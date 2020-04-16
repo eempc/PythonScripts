@@ -1,0 +1,55 @@
+{
+  "coord": { "lon": -4.25, "lat": 55.87 },
+  "weather": [
+    {
+      "id": 501,
+      "main": "Rain",
+      "description": "moderate rain",
+      "icon": "10d"
+    },
+    {
+      "id": 310,
+      "main": "Drizzle",
+      "description": "light intensity drizzle rain",
+      "icon": "09d"
+    },
+    { "id": 741,
+      "main": "Fog",
+      "description": "fog",
+      "icon": "50d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 287.93,
+    "pressure": 1015,
+    "humidity": 100,
+    "temp_min": 285.93,
+    "temp_max": 289.26
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 4.1,
+    "deg": 200
+  },
+  "rain": {
+    "1h": 1.02
+  },
+  "clouds": {
+    "all": 100
+  },
+  "dt": 1559298722,
+  "sys": {
+    "type": 1,
+    "id": 1441,
+    "message": 0.0085,
+    "country": "GB",
+    "sunrise": 1559274089,
+    "sunset": 1559335688
+  },
+  "timezone": 3600,
+  "id": 3333231,
+  "name": "Glasgow City",
+  "cod": 200
+}
+

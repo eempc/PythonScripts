@@ -13,16 +13,23 @@ save_path = os.path.join("Webscrape", file_name)
 
 driver = webdriver.Chrome(chromedriver_path)
 driver.get(url)
-time.sleep(1)
+time.sleep(0.25)
 
-search_box = driver.find_element_by_name('q')
-search_box.send_keys(search_string)
+search_box = driver.find_element_by_name('q') # also by class, id, css selector
+#search_box.send_keys(search_string)
 #search_box.submit() # Standard search
 
-time.sleep(1)
+#time.sleep(1)
 
 lucky_button = driver.find_element_by_name('btnI')
-lucky_button.click()
+random_div = driver.find_element_by_id('footer')
+
+print(lucky_button.tag_name)
+print(random_div.location)
+#lucky_button.click()
+
+
+
 
 html_content = driver.page_source
 
